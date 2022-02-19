@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/view_pager_fragment">
+
+    <fragment
+        android:id="@+id/view_pager_fragment"
+        android:name="com.gpolitov.countries.ViewPagerFragment"
+        tools:layout="@layout/fragment_view_pager">
+
+        <action
+            android:id="@+id/action_view_pager_fragment_to_country_detail_fragment"
+            app:destination="@id/fragment_country_detail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_country_detail"
+        android:name="com.gpolitov.countries.CountryDetailFragment"
+        android:label="Country details"
+        tools:layout="@layout/fragment_country_detail">
+
+        <action
+            android:id="@+id/action_plant_detail_fragment_to_gallery_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="plantId"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
